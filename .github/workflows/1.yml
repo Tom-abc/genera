@@ -1,0 +1,38 @@
+name: deploy
+on:
+  repository_dispatch:
+    types: [deploy]
+  workflow_dispatch:
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: pages
+        uses: actions/configure-pages@v3
+      - name: node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: install
+        run: npm i -D antora @antora/lunr-extension
+      - name: build
+        run: npx antora --fetch antora-playbook.yml
+      - name: upload
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: build/site
+      - name: deploy
+        id: deployment
+        uses: actions/deploy-pages@v2

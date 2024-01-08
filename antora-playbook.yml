@@ -1,0 +1,12 @@
+site:
+  title: Genera
+  url: https://genera.wahwah.tk/docs
+content:
+  sources:
+    - url: https://github.com/Tom-abc/libgenera.git
+      branches: ['docs/*']
+      start_path: docs
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
