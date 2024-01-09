@@ -1,6 +1,7 @@
 site:
   title: Genera
   url: https://docs.genera.wahwah.tk
+  start_page: libgenera::index.adoc
 content:
   sources:
     - url: https://github.com/Tom-abc/libgenera.git
@@ -10,3 +11,6 @@ ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+antora:
+  extensions:
+    - '@antora/lunr-extension'
