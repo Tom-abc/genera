@@ -14,3 +14,8 @@ ui:
 antora:
   extensions:
     - '@antora/lunr-extension'
+asciidoc:
+  extensions:
+    - '@djencks/asciidoctor-mathjax'
+urls:
+  html_extension_style: indexify

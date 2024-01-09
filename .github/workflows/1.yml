@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 20
       - name: install
-        run: npm i -D antora @antora/lunr-extension
+        run: npm i -D antora @antora/lunr-extension @djencks/asciidoctor-mathjax
       - name: build
         run: npx antora --fetch antora-playbook.yml
       - name: upload
