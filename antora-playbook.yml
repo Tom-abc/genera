@@ -1,6 +1,6 @@
 site:
   title: Genera
-  url: https://genera.wahwah.tk/docs
+  url: https://docs.genera.wahwah.tk
 content:
   sources:
     - url: https://github.com/Tom-abc/libgenera.git
